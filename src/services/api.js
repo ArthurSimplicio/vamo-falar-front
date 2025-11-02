@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "https://vamo-falar-front.vercel.app"
+    baseURL: "https://vamo-falar.onrender.com"
 })
 
 api.interceptors.request.use((config)=>{
