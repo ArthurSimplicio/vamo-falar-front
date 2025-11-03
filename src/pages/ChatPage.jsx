@@ -18,8 +18,9 @@ const ChatPage = () => {
         const userName = name
         console.log(userName)
         setCurrentUser(userName)
-        const newSocket = io("http://localhost:5000", {
-            auth: { token }
+        const newSocket = io("https://vamo-falar.onrender.com", {
+            auth: { token },
+            transports: ["websocket"]
         })
         setSocket(newSocket)
         newSocket.emit("joinRoom", { roomName, type: "private" })
