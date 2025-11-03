@@ -6,11 +6,11 @@ const Navbar = () => {
     const token = localStorage.getItem("token")
     const deslogar = () =>{
         localStorage.removeItem("token")
-        navigate("/login")
+        navigate("/")
     }
     return (
         <header className='w-full bg-amber-300 border p-7 flex items-center justify-between'>
-            <div className="font-extrabold text-xl text-blue-700">VAMO FALAR</div>
+            <Link to={"/"} className="font-extrabold text-xl text-blue-700">VAMO FALAR</Link>
             <ul className="flex gap-9">
                 {!token
                     ? (
@@ -21,6 +21,7 @@ const Navbar = () => {
                     )
                     : (
                         <>
+                        <li className="cursor-pointer p-1 w-24 text-center font-bold rounded-2xl bg-blue-700 text-amber-300"><Link to={"/dashboard"}>Salas</Link></li>
                         <li className="cursor-pointer p-1 w-24 text-center font-bold rounded-2xl bg-blue-700 text-amber-300"><Link to={"/createroom"}>Criar Sala</Link></li>
                         <li className="cursor-pointer p-1 w-20 text-center font-bold rounded-2xl bg-blue-700 text-amber-300" onClick={deslogar}>Sair</li>
                         </>

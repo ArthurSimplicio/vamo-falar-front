@@ -17,19 +17,19 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     let msgText
-    let msgType 
+    let msgType
     try {
       await api.post("/auth/register", { name, registration, password })
+      msgText = "Usuario cadastrado com sucesso!"
+      msgType = 'success'
+      setFlashMessages(msgText, msgType)
+      navigate("/dashboard")
     } catch (error) {
       msgText = error.response.data.msg
       msgType = 'error'
       setFlashMessages(msgText, msgType)
-      return
     }
-    msgText = "Usuario cadastrado com sucesso!"
-    msgType = 'success'
-    setFlashMessages(msgText, msgType)
-  navigate("/dashboard")
+
   }
   return (
     <section className="mt-7 flex flex-col  items-center justify-center">

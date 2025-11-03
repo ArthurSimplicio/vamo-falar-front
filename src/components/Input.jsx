@@ -4,6 +4,7 @@ const Input = ({text, type, placeholder, value, onChange}) => {
     <div style={{margin:"5px", display: "flex", flexDirection: "column", gap: "10px"}}>
         <label htmlFor={value}> {text}:</label>
         <input className="p-1.5 border rounded" 
+        autoComplete=""
         type={type} 
         placeholder={placeholder} 
         onChange={onChange}

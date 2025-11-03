@@ -8,15 +8,17 @@ import ChatPage from "./pages/ChatPage"
 import CreateRoom from "./pages/CreateRoom"
 import Navbar from "./components/Navbar"
 import Message from "./components/Message"
+import Users from "./pages/Users"
 
 function App() {
-
+  
   return (
     <>
         <Navbar />
         <Message />
         <Routes>
           
+          <Route path="/" element={<Users />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={
@@ -40,6 +42,7 @@ function App() {
             </PrivateRoute>} 
           />
         </Routes>
+        
     </>
   )
 }
